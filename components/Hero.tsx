@@ -5,85 +5,94 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section id="hero" className="min-h-screen flex items-center">
-      <div className="container grid grid-cols-1 md:grid-cols-12 gap-8 items-center py-24">
+    <section
+      id="hero"
+      className="min-h-screen flex items-center justify-center px-6 bg-[#0a0f1f] relative overflow-hidden"
+    >
+      <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-16 max-w-6xl w-full">
 
-        {/* Text Column */}
-        <div className="md:col-span-7 flex flex-col gap-6">
+        {/* Left: Text Column */}
+        <div className="flex flex-col items-center md:items-start text-center md:text-left gap-6">
           <motion.h1
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
-            className="text-5xl font-extrabold leading-tight"
+            className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-linear-to-r from-purple-500 to-blue-400"
           >
             Reggie Manero — Full Stack Developer
           </motion.h1>
 
           <motion.p
-            initial={{ y: 10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            initial={{ x: -30, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.15 }}
-            className="mt-6 max-w-xl text-lg text-slate-300"
+            className="text-lg md:text-xl text-slate-300 max-w-md"
           >
             I build modern, accessible web applications with performant UI and delightful UX.
             I love solving problems with elegant code and pixel-perfect design.
           </motion.p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-6 flex flex-wrap gap-4 justify-center md:justify-start">
             <a
               href="#projects"
-              className="inline-block px-6 py-3 bg-[linear-gradient(90deg,#7c3aed,#06b6d4)] rounded-md shadow-md font-medium
-              transition-all duration-300 hover:shadow-[0_0_15px_rgba(124,58,237,0.6)] hover:-translate-y-1"
+              className="px-6 py-3 rounded-md font-medium 
+                         bg-linear-to-r from-purple-700 to-blue-500 
+                         shadow-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(124,58,237,0.6)] hover:-translate-y-1"
             >
               View my work
             </a>
-
             <a
               href="#contact"
-              className="inline-block px-6 py-3 bg-[linear-gradient(90deg,#7c3aed,#06b6d4)] rounded-md shadow-md font-medium
-              transition-all duration-300 hover:shadow-[0_0_15px_rgba(124,58,237,0.6)] hover:-translate-y-1"
+              className="px-6 py-3 rounded-md font-medium 
+                         bg-linear-to-r from-purple-700 to-blue-500 
+                         shadow-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(124,58,237,0.6)] hover:-translate-y-1"
             >
               Contact me
             </a>
           </div>
         </div>
 
-        {/* Avatar + Info Column */}
-        <div className="md:col-span-5 flex flex-col items-center gap-4">
+        {/* Right: Avatar + Info Boxes */}
+        <div className="flex flex-col items-center gap-6">
 
-          {/* Avatar (Bigger) */}
+          {/* Avatar */}
           <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
+            initial={{ scale: 0.85, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            whileHover={{ scale: 1.05, rotate: 1 }}
-            className="w-56 h-56 md:w-72 md:h-72 rounded-2xl overflow-hidden shadow-xl ring-1 ring-white/20 transition-all duration-300"
+            whileHover={{ scale: 1.08, rotate: 1 }}
+            className="w-80 h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/20 transition-all duration-300"
           >
             <Image
               src="/avatar.jpg"
-              alt="Reggie's avatar"
+              alt="Reggie Avatar"
               width={400}
               height={400}
-              className="object-cover w-full h-full rounded-2xl"
+              className="object-cover w-full h-full rounded-3xl"
             />
           </motion.div>
 
-          {/* Info Boxes (Smaller) */}
+          {/* Info Boxes */}
           <div className="flex flex-col gap-3 w-full max-w-[220px]">
-            <div className="px-4 py-2 rounded-md shadow-md font-medium text-center
-                            bg-linear-to-r from-purple-700 to-blue-400
-                            hover:scale-105 transition-transform duration-300 text-sm">
+            <motion.div
+              whileHover={{ scale: 1.05, y: -2 }}
+              className="px-4 py-2 rounded-md shadow-md font-medium text-center text-sm
+                         bg-linear-to-r from-purple-700 to-blue-500 text-white transition-transform duration-300"
+            >
               🇵🇭 Located: Manila, Philippines
-            </div>
-            <div className="px-4 py-2 rounded-md shadow-md font-medium text-center
-                            bg-linear-to-r from-purple-700 to-blue-400
-                            hover:scale-105 transition-transform duration-300 text-sm">
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05, y: -2 }}
+              className="px-4 py-2 rounded-md shadow-md font-medium text-center text-sm
+                         bg-linear-to-r from-purple-700 to-blue-500 text-white transition-transform duration-300"
+            >
               📧 reggiemanero25@gmail.com
-            </div>
+            </motion.div>
           </div>
-
         </div>
-
       </div>
+
+      {/* Optional background shapes */}
+      <div className="absolute top-0 left-1/2 w-[600px] h-[600px] bg-purple-700/20 rounded-full -translate-x-1/2 -translate-y-1/3 blur-3xl animate-pulse pointer-events-none" />
     </section>
   );
 }
