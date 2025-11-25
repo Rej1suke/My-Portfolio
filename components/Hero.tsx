@@ -6,13 +6,13 @@ import { motion } from 'framer-motion';
 export default function Hero() {
   return (
     <section
-      id="hero"
-      className="min-h-screen flex items-center justify-center px-6 bg-[#0a0f1f] relative overflow-hidden"
+      id="home"
+      className="min-h-screen pt-16 flex items-center justify-center px-6 bg-[#0a0f1f] relative overflow-hidden text-center"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-16 max-w-6xl w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-items-center gap-16 w-full max-w-7xl mx-auto px-4">
 
         {/* Left: Text Column */}
-        <div className="flex flex-col items-center md:items-start text-center md:text-left gap-6">
+        <div className="flex flex-col items-center text-center gap-6">
           <motion.h1
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -32,7 +32,7 @@ export default function Hero() {
             I love solving problems with elegant code and pixel-perfect design.
           </motion.p>
 
-          <div className="mt-6 flex flex-wrap gap-4 justify-center md:justify-start">
+          <div className="mt-6 flex flex-wrap gap-4 justify-center">
             <a
               href="#projects"
               className="px-6 py-3 rounded-md font-medium 
@@ -52,10 +52,8 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right: Avatar + Info Boxes */}
+        {/* Right: Avatar */}
         <div className="flex flex-col items-center gap-6">
-
-          {/* Avatar */}
           <motion.div
             initial={{ scale: 0.85, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -65,33 +63,15 @@ export default function Hero() {
             <Image
               src="/avatar.jpg"
               alt="Reggie Avatar"
-              width={400}
-              height={400}
+              width={800}
+              height={800}
               className="object-cover w-full h-full rounded-3xl"
             />
           </motion.div>
-
-          {/* Info Boxes */}
-          <div className="flex flex-col gap-3 w-full max-w-[220px]">
-            <motion.div
-              whileHover={{ scale: 1.05, y: -2 }}
-              className="px-4 py-2 rounded-md shadow-md font-medium text-center text-sm
-                         bg-linear-to-r from-purple-700 to-blue-500 text-white transition-transform duration-300"
-            >
-              🇵🇭 Located: Manila, Philippines
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05, y: -2 }}
-              className="px-4 py-2 rounded-md shadow-md font-medium text-center text-sm
-                         bg-linear-to-r from-purple-700 to-blue-500 text-white transition-transform duration-300"
-            >
-              📧 reggiemanero25@gmail.com
-            </motion.div>
-          </div>
         </div>
       </div>
 
-      {/* Optional background shapes */}
+      
       <div className="absolute top-0 left-1/2 w-[600px] h-[600px] bg-purple-700/20 rounded-full -translate-x-1/2 -translate-y-1/3 blur-3xl animate-pulse pointer-events-none" />
     </section>
   );

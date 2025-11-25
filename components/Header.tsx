@@ -19,7 +19,7 @@ const Header: React.FC = () => {
     }
   };
 
-  const navLinks = ['hero', 'about', 'skills', 'projects', 'contact'];
+  const navLinks = ['home', 'about', 'skills', 'projects', 'contact'];
 
   return (
     <header
@@ -31,9 +31,9 @@ const Header: React.FC = () => {
         {/* Name */}
         <div
           className="text-2xl font-bold bg-clip-text text-transparent bg-linear-to-r from-purple-500 to-blue-400 cursor-pointer transition-transform duration-300 hover:scale-105"
-          onClick={() => scrollToSection('hero')}
+          onClick={() => scrollToSection('home')}
         >
-          Reggie
+          Portfolio.
         </div>
 
         {/* Desktop Navigation */}

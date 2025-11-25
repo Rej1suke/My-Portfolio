@@ -2,62 +2,80 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const projects = [
   {
     title: "Portfolio Website",
-    description: "A modern portfolio built with Next.js, TailwindCSS, and Framer Motion.",
-    image: "/projects/portfolio.jpg",
-    url: "https://your-portfolio-url.com",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    image: "/projects/ecommerce.png",
+    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1",
   },
   {
     title: "AI Chatbot",
-    description: "Custom AI chatbot using OpenAI API and serverless functions.",
-    image: "/projects/ai-chatbot.jpg",
-    url: "https://your-chatbot-demo.com",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    image: "/projects/ecommerce.png",
+    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1",
   },
   {
     title: "E-commerce App",
-    description: "Fullstack e-commerce app with Stripe + Sanity CMS.",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     image: "/projects/ecommerce.png",
-    url: "https://your-ecommerce.com",
+    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1",
   },
 ];
 
 export default function Projects() {
   return (
-    <section className="py-16">
-      <h2 className="text-3xl font-bold">Projects</h2>
-      <p className="text-slate-300 mt-2">Some things I built recently.</p>
+    <section className="py-20">
+      <h2 className="text-4xl font-extrabold text-center text-transparent bg-clip-text bg-linear-to-r from-purple-500 to-blue-400">
+        Projects
+      </h2>
+      <p className="text-slate-300 text-center mt-2">
+        Some things I built recently.
+      </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-14 max-w-7xl mx-auto px-4">
         {projects.map((p, i) => (
-          <div
+          <motion.div
             key={i}
-            className="bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:border-white/20 transition"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
+            whileHover={{ scale: 1.02 }}
+            className="group relative rounded-xl overflow-hidden bg-white/5 backdrop-blur-md border border-white/10 shadow-md hover:shadow-lg transition-all duration-300"
           >
-            <div className="relative h-48 w-full">
-              <Image
-                src={p.image}
-                alt={p.title}
-                fill
-                className="object-cover"
-              />
+            {/* Image */}
+            <div className="relative w-full h-60 flex items-center justify-center bg-white/10 rounded-t-xl overflow-hidden">
+              <motion.div
+                className="w-full h-full p-2"
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Image
+                  src={p.image}
+                  alt={p.title}
+                  fill
+                  className="object-contain w-full h-full"
+                />
+              </motion.div>
             </div>
 
-            <div className="p-5">
-              <h3 className="text-xl font-semibold">{p.title}</h3>
-              <p className="text-slate-400 text-sm mt-2">{p.description}</p>
+            {/* Content */}
+            <div className="p-5 space-y-3">
+              <h3 className="text-lg font-semibold text-white">{p.title}</h3>
+              <p className="text-slate-400 text-sm">{p.description}</p>
 
               <Link
                 href={p.url}
                 target="_blank"
-                className="inline-block mt-4 px-4 py-2 rounded-md bg-[linear-gradient(90deg,#7c3aed,#06b6d4)] text-sm font-medium"
+                className="inline-block px-4 py-2 mt-2 rounded-md bg-purple-600 text-white text-sm font-medium hover:bg-purple-500 transition-colors duration-300"
               >
-                Visit Project
+                Visit Project →
               </Link>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
