@@ -9,16 +9,16 @@ const Footer: React.FC = () => {
 
         {/* SOCIAL ICONS */}
         <div className="flex space-x-6">
-          <a href="https://github.com" target="_blank" className="p-3 rounded-xl border border-gray-700 hover:bg-gray-800 transition">
+          <a href="https://github.com/Rej1suke" target="_blank" className="p-3 rounded-xl border border-gray-700 hover:bg-gray-800 transition">
             <FaGithub size={20} />
           </a>
-          <a href="https://linkedin.com" target="_blank" className="p-3 rounded-xl border border-gray-700 hover:bg-gray-800 transition">
+          <a href="https://linkedin.com/in/Rej1suke" target="_blank" className="p-3 rounded-xl border border-gray-700 hover:bg-gray-800 transition">
             <FaLinkedin size={20} />
           </a>
-          <a href="https://facebook.com" target="_blank" className="p-3 rounded-xl border border-gray-700 hover:bg-gray-800 transition">
+          <a href="https://facebook.com/rej1suke" target="_blank" className="p-3 rounded-xl border border-gray-700 hover:bg-gray-800 transition">
             <FaFacebook size={20} />
           </a>
-          <a href="https://instagram.com" target="_blank" className="p-3 rounded-xl border border-gray-700 hover:bg-gray-800 transition">
+          <a href="https://instagram.com/25th_rej" target="_blank" className="p-3 rounded-xl border border-gray-700 hover:bg-gray-800 transition">
             <FaInstagram size={20} />
           </a>
         </div>
